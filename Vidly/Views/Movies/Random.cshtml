@@ -1,7 +1,9 @@
-﻿@model Vidly.Models.Movie
+﻿@using Vidly.Models
 
 @{
 	ViewBag.Title = "Random";
 }
 
-<h2>@Model.Name</h2>
+<h2>@(((Movie)ViewData["Movie"]).Name)</h2>
+
+<h2>@(((Movie)ViewBag.Movie).Name)</h2>
