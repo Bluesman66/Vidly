@@ -1,6 +1,4 @@
-﻿@model IEnumerable<Vidly.Models.Customer>
-
-@*
+﻿@*
 	Note: I've set the model for this view to IEnumerable<Customer>.
 	This is a simple interface implemented by the list class. Since
 	in this view we only want to iterate over this list, and we don't
@@ -15,7 +13,7 @@
 	ViewBag.Title = "Customers";
 }
 
-<h2>Customers</h2>
+<h2>@ViewBag.Title</h2>
 
 <table id="customers" class="table table-bordered table-hover">
 	<thead>
@@ -41,7 +39,7 @@
 					{
 						data: "name",
 						render: function (data, type, customer) {
-							return "<a href='/customer/edit/" + customer.id + "'>" + customer.name + "</a>";
+							return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
 						}
 					},
 					{
